@@ -1,4 +1,4 @@
-/* Copying and distribution of this file, with or without modification,
+d/* Copying and distribution of this file, with or without modification,
  * are permitted in any medium without royalty. This file is offered as-is,
  * without any warranty.
  */
