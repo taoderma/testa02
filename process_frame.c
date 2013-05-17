@@ -162,13 +162,12 @@ int ownOtsu(void)
 	for (r = 0; r < 256; r++) {
 
 		// Berechnung von m0, m1, w0, w1
-		for (c = i; c < 256; c++) {
+		for (c = r+1; c < 256; c++) {
 			w1[r] += hist[c];		// Berechnung w1
 			m1[r] += mean[c];		// Berechnung m1
 		}
-		i++;
 
-		for (c = 0; c <= (r); c++) {
+		for (c = 0; c <= r; c++) {
 			m0[r] += mean[c];		// Berechnung m0
 			w0[r] += hist[c];		// Berechnung w0
 		}
@@ -195,10 +194,7 @@ int ownOtsu(void)
 			}
 		}
 	}
-
-	// Array-Index auf 100 normieren
-	max = (float) max / 255 * 100;
-
+   OscLog(INFO,"thr=%d\n", max);
 	return max;
 }
 
